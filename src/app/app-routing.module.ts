@@ -9,6 +9,7 @@ import { QuizComponent } from './Components/Quiz/Quiz.component';
 import { ReportsComponent } from './Components/reports/reports.component';
 import { RegisterQuizComponent } from './registerQuiz/registerQuiz/registerQuiz.component';
 
+
 const routes: Routes = [
   {path: 'quiz',component: QuizComponent},
   { path: '', redirectTo: '/Home', pathMatch: 'full' },
