@@ -11,6 +11,7 @@ import { SharedService } from 'src/app/Shared/shared.service';
 export class MenageQuizesComponent implements OnInit {
 
   quizes: Quiz[] = [];
+  check:string="check!"
 
   constructor(private service: QuizService,private sharedService:SharedService) {
     
