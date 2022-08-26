@@ -11,14 +11,22 @@ import { SharedService } from 'src/app/Shared/shared.service';
 export class MenageQuizesComponent implements OnInit {
 
   quizes: Quiz[] = [];
-  check:string="check!"
+  newArrayAfterFilter:Quiz[] = [];
+  selectedInstitute: string = "";
+  selectedSubject: string = "";
 
-  constructor(private service: QuizService,private sharedService:SharedService) {
-    
+  constructor(private service: QuizService, private sharedService: SharedService) {
+
   }
 
   async ngOnInit() {
+    this.selectedInstitute =this.sharedService.GetInstData();
+    this.selectedSubject = this.sharedService.GetSubjData();
+    console.log(this.selectedInstitute,this.selectedSubject);
     this.quizes = await this.service.getAllQuizes();
+    debugger;
+    this.newArrayAfterFilter = this.quizes.filter(data=>data.InstitueName === this.selectedInstitute && data.Quiz_Subject === this.selectedSubject);
+    console.log(this.newArrayAfterFilter);
   }
 
 }

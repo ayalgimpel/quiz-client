@@ -13,8 +13,8 @@ class Quiz {
     constructor
     (public Name:string,
      public Intrudaction:string,
-     public InstitueId:number[],
-     public Quiz_Subject:QuizSubjects[],
+     public InstitueName:string,
+     public Quiz_Subject:string,
      public PassingGrade:Number)
      {
         this.Id = Guid.create().toString();

@@ -18,6 +18,6 @@ export class SharedService {
     return this.selectedInstituteName;
   }
   GetSubjData(){
-    return this.selectedInstituteName;
+    return this.selectedSubjectName;
   }
 }
