@@ -24,8 +24,7 @@ export class MenageQuizesComponent implements OnInit {
     this.selectedSubject = this.sharedService.GetSubjData();
     console.log(this.selectedInstitute,this.selectedSubject);
     this.quizes = await this.service.getAllQuizes();
-    debugger;
-    this.newArrayAfterFilter = this.quizes.filter(data=>data.InstitueName === this.selectedInstitute && data.Quiz_Subject === this.selectedSubject);
+    this.newArrayAfterFilter = this.quizes.filter((quiz:Quiz)=>quiz.Institue_Name === this.selectedInstitute && quiz.Quiz_Subject === this.selectedSubject);
     console.log(this.newArrayAfterFilter);
   }
 

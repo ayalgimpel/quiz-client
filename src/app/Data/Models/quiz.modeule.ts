@@ -13,7 +13,7 @@ class Quiz {
     constructor
     (public Name:string,
      public Intrudaction:string,
-     public InstitueName:string,
+     public Institue_Name:string,
      public Quiz_Subject:string,
      public PassingGrade:Number)
      {
