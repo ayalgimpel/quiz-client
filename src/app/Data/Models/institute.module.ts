@@ -9,3 +9,4 @@ class Institue{
         this.Id = Guid.create().toString();
     }
 }
+export default Institue; 

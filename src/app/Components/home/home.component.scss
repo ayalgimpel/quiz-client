@@ -1,0 +1,16 @@
+.headline{
+    color: aqua;
+    font-weight: bold;
+    margin-top: 40px;
+    text-align: center;
+}
+.options{
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    color: black;
+    button{
+        margin-top: 50px;
+        background-color: aqua;
+    }
+}

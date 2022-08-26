@@ -52,7 +52,7 @@ class QuizRepository implements IRepository {
 
     Succsses(respons: Response): any {
         if (respons.status < 350) {
-            return respons.json;
+            return respons.json();
         }
         else {
             throw new Error(respons.statusText)

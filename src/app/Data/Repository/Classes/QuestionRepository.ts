@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
-import Qustion from "src/Data/Models/question.module";
-import Quiz from "src/Data/Models/quiz.modeule";
+import Question from "../../Models/question.module";
 import IRepository from "../Interfaces/IRepository";
 
 @Injectable({
@@ -18,7 +17,7 @@ class QuestionRepository implements IRepository{
             .then(this.Succsses)
             .catch(this.Faild);
     }
-    Post(QuestionItem:Qustion){
+    Post(QuestionItem:Question){
         return fetch("http://localhost:3030/Question", {
             method: "Post",
             body: JSON.stringify(QuestionItem),
@@ -30,7 +29,7 @@ class QuestionRepository implements IRepository{
             .catch(this.Faild);
     
     }
-    Put(QuestionItem:Qustion){
+    Put(QuestionItem:Question){
         return fetch("http://localhost:3030/Question/"+ QuestionItem.Id,{
             method: "Put",
             body: JSON.stringify(QuestionItem),

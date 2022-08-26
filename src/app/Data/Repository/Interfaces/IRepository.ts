@@ -1,7 +1,5 @@
-
-
 interface IRepository{
-    Get():any;
+    Get():Promise<any>;
     GetById(id:number):any
     Post(item:any):any;
     Put(item:any):any;

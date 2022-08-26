@@ -1,7 +1,7 @@
 import { Guid } from "guid-typescript";
 import Answer from "./answer.module";
 
-class Qustion{
+class Question{
     
     Id : string;
     SingleChoice:Boolean = true;
@@ -15,4 +15,4 @@ class Qustion{
     }
 
 }
-export default Qustion;
+export default Question;
