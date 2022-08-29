@@ -19,8 +19,7 @@ selectedSubject:string = "";
   constructor(private adminService:AdminService,private router:Router,private sharedService:SharedService) { }
 
   async ngOnInit() {
-    this.institutesOptions = await this.adminService.GetAllInstitutes();
-    this.quizSubjects = await this.adminService.GetAllSubjects();
+    
   }
   GoToManageQuizesPage(){
     this.sharedService.SetInstData(this.selectedInstitute);

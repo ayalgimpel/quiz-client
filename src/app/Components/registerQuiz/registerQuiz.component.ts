@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-registerQuiz',
@@ -13,4 +13,7 @@ export class RegisterQuizComponent implements OnInit {
   ngOnInit() {
   }
 
+  GoToPreviewQuiz(){
+    this.router.navigate(['PreviewQuiz'])
+  }
 }

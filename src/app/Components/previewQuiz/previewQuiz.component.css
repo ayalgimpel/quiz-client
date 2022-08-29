@@ -17,15 +17,14 @@
     height: calc(100% - 160px);display: flex;
 }
 
-.page-content .quiz-reguster {
+.page-content .quiz-preview {
     background: #d6c9c9;
     width: 50%;
-    height: 70%;
+    height: 80%;
     margin: auto;
     display: grid;
     border-radius: 30px;
     justify-content: center;
-    font: -webkit-small-control;
 }
 
 .page-footer{

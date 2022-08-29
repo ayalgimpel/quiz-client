@@ -17,7 +17,7 @@ export class MenageQuizesComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.quizes = await this.service.getAllQuizes();
+    //this.quizes = await this.service.getAllQuizes();
   }
 
 }
