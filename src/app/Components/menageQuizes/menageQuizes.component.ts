@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import Quiz from 'src/app/Data/Models/quiz.modeule';
 import QuizService from 'src/app/Services/quiz.service';
-import { SharedService } from 'src/app/Shared/shared.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-menageQuizes',
@@ -15,17 +16,67 @@ export class MenageQuizesComponent implements OnInit {
   selectedInstitute: string = "";
   selectedSubject: string = "";
 
-  constructor(private service: QuizService, private sharedService: SharedService) {
+  constructor(private quizService: QuizService, private router:Router, private route:ActivatedRoute) {
 
   }
 
-  async ngOnInit() {
-    this.selectedInstitute =this.sharedService.GetInstData();
-    this.selectedSubject = this.sharedService.GetSubjData();
-    console.log(this.selectedInstitute,this.selectedSubject);
-    this.quizes = await this.service.getAllQuizes();
-    this.newArrayAfterFilter = this.quizes.filter((quiz:Quiz)=>quiz.Institue_Name === this.selectedInstitute && quiz.Quiz_Subject === this.selectedSubject);
-    console.log(this.newArrayAfterFilter);
-  }
+   ngOnInit() {
 
+    this.route.queryParams.subscribe(params=>{
+      this.selectedInstitute = params["instituteID"];
+      this.selectedSubject = params["subjectID"];
+    })
+    this.quizService.getAllQuizes().subscribe(data =>{
+      this.quizes = data;
+      console.log(this.quizes)
+      this.newArrayAfterFilter = this.quizes.filter((quiz:Quiz)=>quiz.Institue_Name === this.selectedInstitute && quiz.Quiz_Subject === this.selectedSubject);
+    })
+  }
+  getNumberOfQuestions(quiz:Quiz):number{
+    return quiz.Questions.length;
+  }
+  getNumberOfSubmitions(quiz:Quiz):number{
+    return quiz.Aproached_Students_Id.length
+  }
+  GoToAdminPage(){
+    this.router.navigate(['AdminOptions']);
+  }
+  CreateQuizPage(){
+    this.router.navigate(['NewQuiz']);
+  }
+  GoToEditQuizPage(quizId:string){
+    this.router.navigate(['EditQuiz'],{queryParams:{quizId:quizId}});
+  }
+  DeleteAlert(quiz:Quiz){
+    Swal.fire({
+      title:"Are You Sure You Want To Delet This Quiz?",
+      text:"After Confirming, this Quiz Will Be Delete Paramantely..",
+      icon:"warning",
+      showCancelButton:true,
+      confirmButtonColor:"red",
+      confirmButtonText:"Delete",
+      cancelButtonText:"Cancle",
+      cancelButtonColor:"grey",
+    }).then((result)=>{
+      if(result.value){
+        this.quizService.DeleteQuizById(quiz.Id).subscribe(res=>{
+          if(res.error){
+            console.log(res.error);
+          }
+          else{
+            Swal.fire(
+              "DELETED!",
+              `${quiz.Name} was deleted sucssefully!`,
+              "success"
+            )
+            this.newArrayAfterFilter = this.newArrayAfterFilter.filter(quiz=> quiz.Id!==res.deletedQuizID);
+          }
+        })
+       
+      }
+      else if(result.dismiss === Swal.DismissReason.cancel){
+        Swal.fire("Canceled!", "Your Quiz is Safe :)", "error")
+      }
+    })
+  }
 }

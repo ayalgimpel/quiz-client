@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
@@ -11,7 +12,6 @@ import { HomeComponent } from './Components/home/home.component';
 import { LoginComponent } from './Components/login/login.component';
 import { MenageQuizesComponent } from './Components/menageQuizes/menageQuizes.component';
 import { QuizComponent } from './Components/Quiz/Quiz.component';
-import { RegisterQuizComponent } from './registerQuiz/registerQuiz/registerQuiz.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +21,13 @@ import { RegisterQuizComponent } from './registerQuiz/registerQuiz/registerQuiz.
     LoginComponent,
     AdminOptionComponent,
     MenageQuizesComponent,
-    RegisterQuizComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

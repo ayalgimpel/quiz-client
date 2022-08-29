@@ -5,10 +5,12 @@ import QuizSubjects from "./quiz.subjects.module";
 import Student from "./student.module";
 
 class Quiz {
-    Id: string;
+    Id: string="";
     Quiz_Code: Guid;
     Questions: Qustion[] = [];
-    Approached_Students:Student[] = [];
+    Aproached_Students_Id:number[] = [];
+    Last_Updated:string = "";
+    IsActive:boolean = false;
     
     constructor
     (public Name:string,
@@ -17,7 +19,6 @@ class Quiz {
      public Quiz_Subject:string,
      public PassingGrade:Number)
      {
-        this.Id = Guid.create().toString();
         this.Quiz_Code = Guid.create();
     }
 

@@ -6,8 +6,11 @@
 
 <div class="main">
   <div>
-    <h1>Availble Quizes For </h1>
+    <div class="back">
+      <button class="btn btn-warning" (click)="GoToAdminPage()">Back</button>
+    </div>
     <div class="container">
+      <h1>Availble Quizes For <span class="span">{{selectedInstitute}}</span > of Subjust : <span class="span">{{selectedSubject}}</span></h1>
       <br />
       <div class="row justify-content-center">
         <div class="col-12 col-md-10 col-lg-8">
@@ -20,7 +23,8 @@
               <div class="row search">
                 <input class="form-control form-control-lg form-control-border" type="search"
                   placeholder="Search topics or keywords sepperated by Commas">
-                  <button class="btn btn-lg btn-success" type="submit">Search</button>
+                <button class="btn btn-lg btn-success" type="submit">Search</button>
+                <button (click)="CreateQuizPage()" class="btn btn-lg btn-info">Create New Quiz</button>
               </div>
               <!--end of col-->
               <!--end of col-->
@@ -50,20 +54,25 @@
           <td>{{item.Id}}</td>
           <td>{{item.Quiz_Code}}</td>
           <td>{{item.Name}}</td>
-          <td>{{item.Questions.length}}</td>
-          <td>Last updates !</td>
-          <td>Number Of Submitions</td>
+          <td>{{getNumberOfQuestions(item)}}</td>
+          <td>{{item.Last_Updated}}</td>
+          <td>{{getNumberOfSubmitions(item)}}</td>
           <td class="text-center">
-            <a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a>
-            <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</a>
+            <button (click)="GoToEditQuizPage(item.Id)" *ngIf="!item.IsActive" class='btn btn-info btn-xs'><span class="glyphicon glyphicon-edit"></span> Edit</button>
+            <button *ngIf="!item.IsActive" class="btn btn-danger btn-xs" (click)="DeleteAlert(item)"><span class="glyphicon glyphicon-remove"></span> Delete</button>
           </td>
           <td>
-            <a class='btnActive btn-info btn-xs' href="#"><span class="	glyphicon glyphicon-ok"></span> Active</a>
-            <a class='btnUnActive btn-info btn-xs' href="#"><span class="glyphicon glyphicon-remove"></span>
+            <a *ngIf="item.IsActive" class='btnActive btn-info btn-xs' href="#"><span class="	glyphicon glyphicon-ok"></span> Active</a>
+            <a *ngIf="!item.IsActive" class='btnUnActive btn-info btn-xs' href="#"><span class="glyphicon glyphicon-remove"></span>
               Un-Active</a>
           </td>
         </tr>
       </table>
+    </div>
+    <div class="btns-menageList">
+      <button href="#"  class="btn btn-xlarge"> Prev 3  <i class="fa fa-chevron-left fa-3x" ></i></button>
+      <button class="btn btn-lg btn-info">Show All Quizes</button>
+      <button href="#"  class="btn btn-xlarge"><i class="fa fa-chevron-right fa-3x" ></i>  Next 3</button>
     </div>
   </div>
 </div>

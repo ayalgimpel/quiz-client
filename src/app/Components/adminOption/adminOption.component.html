@@ -1,21 +1,31 @@
-<div class="main">
-  <h1>Lets Start Manage Your Quizes.....</h1>
-  <div class="selectPicking">
-    <label>Select Your Institute</label>
-    <select class="Options" (change)="OnSelectInstitute($event)">
-      <option *ngFor="let item of institutesOptions" [value]="item.Name">{{item.Name}}</option>
-    </select>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+  integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+
+  <div class="card">
+    <div class="main">
+      <h1>Lets Start Manage Your Quizes.....</h1>
+      <div class="selectPicking">
+        <label>Select Your Institute</label>
+        <select [value]="''" class="Options"  [(ngModel)]="selectedInstitute" >
+          <option value="" selected disabled hidden> Please choose institute </option>
+          <option  *ngFor="let item of institutesOptions"  [value]="item.Name">{{item.Name}}</option>
+        </select>
+      </div>
+      <div class="selectPicking">
+        <label>Select Your Quiz Subject</label>
+        <select class="Options" [(ngModel)]="selectedSubject">
+          <option value="" selected disabled hidden> Please choose Subject </option>
+          <option *ngFor="let item of quizSubjects" [value]="item.Name">{{item.Name}}</option>
+        </select>
+      </div>
+      <div class="buttons">
+        <button class="btn btn-primary" (click)="GoToManageQuizesPage()">Manage Quizes</button>
+        <button class="btn btn-danger" (click)="GoToReportsPage()">Reports</button>
+        <button class="btn btn-info" (click)="GoToManageQuestionPage()">Manage Questions</button>
+      </div>
+    </div>
   </div>
-  <div class="selectPicking">
-    <label>Select Your Quiz Subject</label>
-    <select class="Options" (change)="OnSelectSubjects($event)">
-      <option *ngFor="let item of quizSubjects" [value]="item.Name">{{item.Name}}</option>
-    </select>
-  </div>
-  <div class="buttons">
-    <button (click)="GoToManageQuizesPage()" >Manage Quizes</button>
-    <button (click)="GoToReportsPage()" >Reports</button>
-    <button (click)="GoToManageQuestionPage()" >Manage Questions</button>
-  </div>
-</div>
- 

@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import Institue from 'src/app/Data/Models/institute.module';
 import QuizSubjects from 'src/app/Data/Models/quiz.subjects.module';
 import AdminService from 'src/app/Services/admin.service';
-import { SharedService } from 'src/app/Shared/shared.service';
 
 @Component({
   selector: 'app-adminOption',
@@ -16,16 +15,15 @@ institutesOptions:Institue[]=[];
 quizSubjects:QuizSubjects[]=[];
 selectedInstitute:string = "";
 selectedSubject:string = "";
-  constructor(private adminService:AdminService,private router:Router,private sharedService:SharedService) { }
+  constructor(private adminService:AdminService,private router:Router) { }
 
-  async ngOnInit() {
-    this.institutesOptions = await this.adminService.GetAllInstitutes();
-    this.quizSubjects = await this.adminService.GetAllSubjects();
+   ngOnInit() {
+    this.adminService.GetAllInstitutes().subscribe(data =>{this.institutesOptions = data});
+    this.adminService.GetAllSubjects().subscribe(data=>{this.quizSubjects = data})
+    
   }
   GoToManageQuizesPage(){
-    this.sharedService.SetInstData(this.selectedInstitute);
-    this.sharedService.SetSubjData(this.selectedSubject);
-    this.router.navigate(['ManageQuizes'])
+    this.router.navigate(['ManageQuizes'], {queryParams: {instituteID:this.selectedInstitute, subjectID:this.selectedSubject }})
   }
   GoToReportsPage(){
     this.router.navigate(['Reports'])

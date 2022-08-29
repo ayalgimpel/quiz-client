@@ -1,18 +1,20 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import InstituteRepository from "../Data/Repository/Classes/InstituteRepository";
-import QuizSubjectsRepository from "../Data/Repository/Classes/QuizSubjectsRepository";
+import { Observable } from "rxjs";
 
 @Injectable({
     providedIn: 'root'
 })
 class AdminService {
-    constructor(private instituteRepo:InstituteRepository, private quizSubjectsRepo:QuizSubjectsRepository ) {
+    baseUrl: string = "http://localhost:4000";
+
+    constructor(private http:HttpClient) {
     }
-    async GetAllInstitutes() {
-        return await this.instituteRepo.GetAllInstitutes();
+    GetAllInstitutes():Observable<any> {
+        return this.http.get(this.baseUrl+ "/api/institutes");
     }
-    async GetAllSubjects() {
-        return await this.quizSubjectsRepo.GetAllSubjects();
+    GetAllSubjects():Observable<any> {
+        return this.http.get(this.baseUrl+ "/api/quizesSubjects");
     }
 }
 export default AdminService;
