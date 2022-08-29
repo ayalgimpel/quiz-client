@@ -57,7 +57,7 @@ export class MenageQuizesComponent implements OnInit {
       confirmButtonText:"Delete",
       cancelButtonText:"Cancle",
       cancelButtonColor:"grey",
-    }).then((result)=>{
+    }).then((result:any)=>{
       if(result.value){
         this.quizService.DeleteQuizById(quiz.Id).subscribe(res=>{
           if(res.error){

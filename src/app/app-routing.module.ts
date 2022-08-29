@@ -7,12 +7,15 @@ import { HomeComponent } from './Components/home/home.component';
 import { LoginComponent } from './Components/login/login.component';
 import { ManageQuestionsComponent } from './Components/manageQuestions/manageQuestions.component';
 import { MenageQuizesComponent } from './Components/menageQuizes/menageQuizes.component';
+import { PreviewQuizComponent } from './Components/previewQuiz/previewQuiz.component';
 import { QuizComponent } from './Components/Quiz/Quiz.component';
+import { RegisterQuizComponent } from './Components/registerQuiz/registerQuiz.component';
 import { ReportsComponent } from './Components/reports/reports.component';
+import { ResultQuizComponent } from './Components/resultQuiz/resultQuiz.component';
 
 
 const routes: Routes = [
-  {path: 'quiz',component: QuizComponent},
+  {path: 'Quiz',component: QuizComponent},
   { path: '', redirectTo: '/Home', pathMatch: 'full' },
   {path: 'Home',component: HomeComponent},
   {path: 'Login',component: LoginComponent},
@@ -22,6 +25,8 @@ const routes: Routes = [
   {path: 'Reports',component: ReportsComponent},
   {path: 'EditQuiz',component: EditQuizComponent},
   {path: 'NewQuiz',component: CreateQuizComponent},
+  {path: 'PreviewQuiz',component: PreviewQuizComponent},
+  {path: 'ResultQuiz',component: ResultQuizComponent},
 ];
 
 @NgModule({

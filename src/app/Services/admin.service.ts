@@ -11,7 +11,7 @@ class AdminService {
     constructor(private http:HttpClient) {
     }
     GetAllInstitutes():Observable<any> {
-        return this.http.get(this.baseUrl+ "/api/institutes");
+       // return this.http.get(this.baseUrl+ "/api/institutes");
     }
     GetAllSubjects():Observable<any> {
         return this.http.get(this.baseUrl+ "/api/quizesSubjects");
