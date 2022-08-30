@@ -15,8 +15,10 @@ class QuizService {
         return this.http.get(this.baseUrl+ "/api/quizes");
     }
     DeleteQuizById(id:string):Observable<any>{
-        debugger
         return this.http.delete(this.baseUrl + `/api/quizes/deleteQuiz?quizID=${id}`);
+    }
+    getQuizById(id:string):Observable<any>{
+        return  this.http.get(this.baseUrl+ `/api/quizes/getById?Id=${id}`)
     }
  
 
