@@ -25,6 +25,7 @@ import { EditQuizComponent } from './Components/editQuiz/editQuiz.component';
     MenageQuizesComponent,
     RegisterQuizComponent,
     QuizQuestionComponent,
+    PreviewQuizComponent,
     EditQuizComponent
   ],
   imports: [
