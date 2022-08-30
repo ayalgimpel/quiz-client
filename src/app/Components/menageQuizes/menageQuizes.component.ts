@@ -44,8 +44,8 @@ export class MenageQuizesComponent implements OnInit {
   CreateQuizPage(){
     this.router.navigate(['NewQuiz']);
   }
-  GoToEditQuizPage(quizId:string){
-    this.router.navigate(['EditQuiz'],{queryParams:{quizId:quizId}});
+  GoToEditQuizPage(quiz:Quiz){
+    this.router.navigate(['EditQuiz'],{queryParams:{quizId:quiz.Id}});
   }
   DeleteAlert(quiz:Quiz){
     Swal.fire({

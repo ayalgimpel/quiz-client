@@ -37,18 +37,6 @@
     margin-left: 7px;
 }
 
-.form-control-borderless {
-    border: none;
-}
-
-.form-control-borderless:hover,
-.form-control-borderless:active,
-.form-control-borderless:focus {
-    border: none;
-    outline: none;
-    box-shadow: none;
-}
-
 .row {
     display: flex;
     justify-content: space-between;
@@ -56,13 +44,28 @@
     align-items: center;
 }
 
-.search button {
-    margin-left: 100px;
-}
+
 
 .search input {
     margin: 20px;
     width: 500px;
+}
+.search-btn{
+    width: 80px;
+    height: 50px;
+    border-radius: 10px;
+    background-color:#61d1e1;
+    color: white;
+    font-weight: bold;
+    
+}
+.create-button{
+    width: 30%;
+    height: 40px;
+    border-radius: 20px;
+    font-weight: bold;
+    background-color: #ffcb53;
+    color: white;
 }
 
 .btns-menageList {
@@ -70,6 +73,24 @@
     justify-content: space-evenly;
     margin-top: 200px;
     margin-bottom: 50px;
+}
+.delete-btn{
+    background-color: #ff0046;
+    width: 80px;
+    height: 30px;
+    border-radius: 8px;
+    margin: 5px;
+    color: white;
+    font-weight: bold;
+justify-content: space-between;
+}
+.edit-btn{
+    background-color: #61d1e1;
+    width: 80px;
+    height: 30px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
 }
 
 .btns-options {
@@ -89,7 +110,7 @@
 }
 .container .span{
     padding: 0 0 20px;
-    color:rgb(146, 168, 209);
+    color:#ffcb53;
     font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

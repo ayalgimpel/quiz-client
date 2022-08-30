@@ -11,13 +11,16 @@ class Quiz {
     Aproached_Students_Id:number[] = [];
     Last_Updated:string = "";
     IsActive:boolean = false;
+    Header:string ="";
+    Messege_If_Past:string="";
+    Messege_If_Faild:string ="";
     
     constructor
     (public Name:string,
      public Intrudaction:string,
      public Institue_Name:string,
      public Quiz_Subject:string,
-     public PassingGrade:Number)
+     public Passing_Grade:number)
      {
         this.Quiz_Code = Guid.create();
     }
