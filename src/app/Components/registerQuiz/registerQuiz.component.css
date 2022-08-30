@@ -1,9 +1,8 @@
-
 .page {
     height: 100%;
 }
 
-.page-header{
+.page-header {
     height: 80px;
     line-height: 80px;
     color: rgb(246, 246, 246);
@@ -13,27 +12,29 @@
     margin: auto;
 }
 
-.page-content{
-    height: calc(100% - 160px);display: flex;
+.page-content {
+    height: calc(100% - 80px);
+    display: flex;
+    justify-content: space-around;
 }
 
 .page-content .quiz-reguster {
     background: #d6c9c9;
-    width: 50%;
-    height: 70%;
-    margin: auto;
+    width: 70%;
+    margin: 20px;
     display: grid;
     border-radius: 30px;
-    justify-content: center;
+    justify-content: space-around;
     font: -webkit-small-control;
+    align-content: space-evenly;
 }
 
-.page-footer{
+.page-footer {
     height: 80px;
 }
 
 
-.btn{
+.btn {
     font-size: 20px;
     border-radius: 20px;
     inline-size: -webkit-fill-available;

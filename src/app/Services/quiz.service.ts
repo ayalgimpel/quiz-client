@@ -7,20 +7,29 @@ import { Observable } from "rxjs";
     providedIn: 'root'
 })
 class QuizService {
-    constructor( private http:HttpClient) {
+    constructor(private http: HttpClient) {
     }
     baseUrl: string = "http://localhost:4000";
 
-    getAllQuizes():Observable<any>{
-        return this.http.get(this.baseUrl+ "/api/quizes");
+    getAllQuizes(): Observable<any> {
+        return this.http.get(this.baseUrl + "/api/quizes");
     }
-    DeleteQuizById(id:string):Observable<any>{
+    getQuizQuestions(quizId: string): Observable<any> {
+        return this.http.get(this.baseUrl + `/api/quizes/${quizId}/questions`);
+    }
+    DeleteQuizById(id: string): Observable<any> {
         return this.http.delete(this.baseUrl + `/api/quizes/deleteQuiz?quizID=${id}`);
     }
-    getQuizById(id:string):Observable<any>{
-        return  this.http.get(this.baseUrl+ `/api/quizes/getById?Id=${id}`)
+    getQuizById(id: string): Observable<any> {
+        return this.http.get(this.baseUrl + `/api/quizes/getById?Id=${id}`)
     }
- 
+    getQuizByQuizeCode(quizCode: string): Observable<any> {
+        return this.http.get(this.baseUrl + `/api/quizes/getByQuizeCode?quizeCode=${quizCode}`)
+    }
+
+
+
+
 
 }
 export default QuizService;

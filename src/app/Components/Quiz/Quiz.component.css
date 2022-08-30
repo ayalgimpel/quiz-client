@@ -1,39 +1,47 @@
-.quiz-header{
-height: 100px;
-color: rgb(246, 246, 246);
-background-color: rgb(16, 70, 198);
-padding: 20px 50px;
+.quiz-header {
+    height: 100px;
+    color: rgb(246, 246, 246);
+    background-color: rgb(16, 70, 198);
+    padding: 20px 50px;
 }
 
 
-.content{
-    height: 365px;
-    display:block;
+.content {
+    /* height: 365px; */
+    display: block;
     text-align: center;
     justify-content: space-evenly;
-    
+
 }
-.content div{
+
+.content div {
     height: 33%;
 }
 
-.bottom{
-    background-color : lightseagreen;
+.bottom {
+    background-color: lightseagreen;
     height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.answer{
+
+.answer {
     display: table-row-group;
 }
-.btn{
+
+.btn {
     font-size: 20px;
     text-align: center;
     border-radius: 40px;
     height: 50x;
 }
-.questionPart{
+
+.questionPart {
     display: flex;
     justify-content: space-evenly;
+}
+
+.container-body {
+    height: calc(100% - 200px);
 }

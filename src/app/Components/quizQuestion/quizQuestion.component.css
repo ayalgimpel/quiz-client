@@ -1,0 +1,22 @@
+.question-content-box {
+    display: flex;
+    align-content: space-between;
+    height: 30%;
+}
+
+.question-content {
+    background-color: red;
+    width: 100%;
+    text-align: left;
+    padding: 20px;
+}
+
+.question-image {
+    background-color: yellow;
+    width: 50%;
+}
+
+.question-answers {
+    background-color: green;
+    height: 70%;
+}

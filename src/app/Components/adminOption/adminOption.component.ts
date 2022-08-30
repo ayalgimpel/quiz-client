@@ -18,7 +18,7 @@ selectedSubject:string = "";
   constructor(private adminService:AdminService,private router:Router) { }
 
    ngOnInit() {
-    this.adminService.GetAllInstitutes().subscribe(data =>{this.institutesOptions = data});
+    //this.adminService.GetAllInstitutes().subscribe(data =>{this.institutesOptions = data});
     this.adminService.GetAllSubjects().subscribe(data=>{this.quizSubjects = data})
     
   }
