@@ -39,14 +39,11 @@ export class QuizComponent implements OnInit {
 
           
         
-          if (!this.currentQuestion?.Id)
-          return;
-    
-        this.questionsService.getAnswers(this.currentQuestion?.Id).subscribe((answers) => {
-      
-          console.log(answers)
-        
-          this.currentQuestion?.Answers })
+          //if (!this.currentQuestion?.Id)
+          //return;
+       // this.questionsService.getAnswers(this.currentQuestion?.Id).subscribe((answers) => {
+         // console.log(answers)
+          //this.currentQuestion?.Answers })
         
          
         });
