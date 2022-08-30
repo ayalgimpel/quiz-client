@@ -24,7 +24,7 @@ import { EditQuizComponent } from './Components/editQuiz/editQuiz.component';
     AdminOptionComponent,
     MenageQuizesComponent,
     RegisterQuizComponent,
-    QuizQuestionComponent
+    QuizQuestionComponent,
     EditQuizComponent
   ],
   imports: [
