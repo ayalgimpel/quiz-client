@@ -17,6 +17,7 @@ export class EditQuizComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.quizService.getQuizById(params["quizId"]).subscribe
         (quiz => {
+          debugger;
           this.quizToEdit = quiz;
         })
     })
