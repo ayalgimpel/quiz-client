@@ -23,7 +23,8 @@ import { QuizQuestionComponent } from './Components/quizQuestion/quizQuestion.co
     AdminOptionComponent,
     MenageQuizesComponent,
     RegisterQuizComponent,
-    QuizQuestionComponent
+    QuizQuestionComponent,
+    PreviewQuizComponent
   ],
   imports: [
     BrowserModule,
