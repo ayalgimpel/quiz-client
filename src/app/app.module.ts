@@ -11,6 +11,8 @@ import { LoginComponent } from './Components/login/login.component';
 import { MenageQuizesComponent } from './Components/menageQuizes/menageQuizes.component';
 import { PreviewQuizComponent } from './Components/previewQuiz/previewQuiz.component';
 import { QuizComponent } from './Components/Quiz/Quiz.component';
+import { RegisterQuizComponent } from './Components/registerQuiz/registerQuiz.component';
+import { QuizQuestionComponent } from './Components/quizQuestion/quizQuestion.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { QuizComponent } from './Components/Quiz/Quiz.component';
     LoginComponent,
     AdminOptionComponent,
     MenageQuizesComponent,
+    RegisterQuizComponent,
+    QuizQuestionComponent
   ],
   imports: [
     BrowserModule,

@@ -15,18 +15,19 @@ import { ResultQuizComponent } from './Components/resultQuiz/resultQuiz.componen
 
 
 const routes: Routes = [
-  {path: 'Quiz',component: QuizComponent},
+  { path: 'Quiz', component: QuizComponent },
   { path: '', redirectTo: '/Home', pathMatch: 'full' },
-  {path: 'Home',component: HomeComponent},
-  {path: 'Login',component: LoginComponent},
-  {path: 'AdminOptions',component: AdminOptionComponent},
-  {path: 'ManageQuizes',component: MenageQuizesComponent},
-  {path: 'ManageQuestions',component: ManageQuestionsComponent},
-  {path: 'Reports',component: ReportsComponent},
-  {path: 'EditQuiz',component: EditQuizComponent},
-  {path: 'NewQuiz',component: CreateQuizComponent},
-  {path: 'PreviewQuiz',component: PreviewQuizComponent},
-  {path: 'ResultQuiz',component: ResultQuizComponent},
+  { path: 'Home', component: HomeComponent },
+  { path: 'Login', component: LoginComponent },
+  { path: 'AdminOptions', component: AdminOptionComponent },
+  { path: 'ManageQuizes', component: MenageQuizesComponent },
+  { path: 'ManageQuestions', component: ManageQuestionsComponent },
+  { path: 'Reports', component: ReportsComponent },
+  { path: 'EditQuiz', component: EditQuizComponent },
+  { path: 'NewQuiz', component: CreateQuizComponent },
+  { path: 'PreviewQuiz', component: PreviewQuizComponent },
+  { path: 'ResultQuiz', component: ResultQuizComponent },
+  { path: 'RegisterQuiz', component: RegisterQuizComponent }
 ];
 
 @NgModule({

@@ -1,0 +1,19 @@
+<div class="w-100 h-100">
+
+  <div class="w-100 question-content-box">
+    <div class="question-content">
+
+      <h1>Question #{{question?.Id}}</h1>
+      <div> {{question?.Content}}</div>
+
+    </div>
+
+
+  </div>
+
+  <div class="w-100 question-answers">
+    <div *ngFor="let item in answers">
+      {{item.Content}}
+    </div>
+  </div>
+</div>

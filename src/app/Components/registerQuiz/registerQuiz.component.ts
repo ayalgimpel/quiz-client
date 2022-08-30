@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-registerQuiz',
@@ -8,12 +8,16 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class RegisterQuizComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  quizeCode: string = ""
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
 
-  GoToPreviewQuiz(){
-    this.router.navigate(['PreviewQuiz'])
+
+
+  GoToPreviewQuiz(quizeCode: string) {
+    this.router.navigate(['PreviewQuiz'], { queryParams: { quizeCode: quizeCode } })
   }
+
 }

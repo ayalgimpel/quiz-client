@@ -10,15 +10,15 @@ import QuizService from 'src/app/Services/quiz.service';
 })
 export class EditQuizComponent implements OnInit {
 
-  quizToEdit:Quiz;
+  //quizToEdit:Quiz;
   constructor(private route:ActivatedRoute, private quizService:QuizService) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params=>{
-      this.quizService.getQuizById(params["quizId"]).subscribe(quiz =>
-        this.quizToEdit = quiz)
+    // this.route.params.subscribe(params=>{
+    //   this.quizService.getQuizById(params["quizId"]).subscribe(quiz =>
+    //     this.quizToEdit = quiz)
 
-    })
-  }
+    }//)
+ // }
 
 }
