@@ -3,7 +3,7 @@
   <div class="w-100 question-content-box">
     <div class="question-content">
 
-      <h1>Question #{{question?.Id}}</h1>
+      <h1 class="h">Question #{{index}}</h1>
       <div> {{question?.Content}}</div>
 
     </div>
@@ -12,8 +12,13 @@
   </div>
 
   <div class="w-100 question-answers">
-    <div *ngFor="let item of answers">
-      {{item.Content}}
-    </div>
+    <ul *ngFor="let item of answers; let i = index ">
+      <label class="label">
+        <div class="text-answer"> {{i +1}} )  {{item.Content}}</div>
+        <input [(ngModel)]='selectedAnswer' [value]="item.Id" (ngModelChange)="SelectionAnswers()" type="radio" >
+        <span class="checkmark"></span>
+      </label>
+    </ul>
+
   </div>
 </div>

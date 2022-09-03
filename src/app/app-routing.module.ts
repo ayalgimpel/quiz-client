@@ -10,6 +10,7 @@ import { MenageQuizesComponent } from './Components/menageQuizes/menageQuizes.co
 import { PreviewQuizComponent } from './Components/previewQuiz/previewQuiz.component';
 import { QuizComponent } from './Components/Quiz/Quiz.component';
 import { RegisterQuizComponent } from './Components/registerQuiz/registerQuiz.component';
+import { RegisterQuizeCodeComponent } from './Components/registerQuizeCode/registerQuizeCode.component';
 import { ReportsComponent } from './Components/reports/reports.component';
 import { ResultQuizComponent } from './Components/resultQuiz/resultQuiz.component';
 
@@ -27,7 +28,9 @@ const routes: Routes = [
   { path: 'NewQuiz', component: CreateQuizComponent },
   { path: 'PreviewQuiz', component: PreviewQuizComponent },
   { path: 'ResultQuiz', component: ResultQuizComponent },
-  { path: 'RegisterQuiz', component: RegisterQuizComponent }
+  { path: 'RegisterQuiz', component: RegisterQuizComponent },
+  { path: 'RegisterQuizeCode', component: RegisterQuizeCodeComponent }
+  
 ];
 
 @NgModule({

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import Answer from 'src/app/Data/Models/answer.module';
 import Question from 'src/app/Data/Models/question.module';
-import Quiz from 'src/app/Data/Models/quiz.modeule';
+import Quiz from 'src/app/Data/Models/quiz.module';
 import QuestionsService from 'src/app/Services/questions.service';
 import QuizService from 'src/app/Services/quiz.service';
 import Swal from 'sweetalert2';
@@ -14,9 +14,13 @@ import Swal from 'sweetalert2';
 })
 export class QuizComponent implements OnInit {
 
-  Currentanswer : Answer | undefined;
+  answers: Answer[] | undefined;
+  currentIndex: number | undefined;
   currentQuestion: Question | undefined;
   quiz: Quiz = new Quiz("", "", "", "", 0)
+  questionsCount: number | undefined;
+  currentPage: number | undefined;
+
 
   constructor(
     private route: ActivatedRoute,
@@ -33,19 +37,24 @@ export class QuizComponent implements OnInit {
       this.quizService.getQuizByQuizeCode(quizCode).subscribe(async quiz => {
         this.quiz = quiz
         this.quizService.getQuizQuestions(quiz.Id).subscribe((questions) => {
-          this.quiz.Questions = questions;
-          this.currentQuestion = this.quiz.Questions[0];
-          console.log(this.quiz.Questions);
 
-          
-        
-          //if (!this.currentQuestion?.Id)
-          //return;
-         // this.questionsService.getAnswers(this.currentQuestion?.Id).subscribe((answers) => {
-         // console.log(answers)
-          //this.currentQuestion?.Answers })
-        
-         
+
+
+          this.quiz.Questions = questions;
+
+          const firstIndex = 1;
+          this.currentIndex = firstIndex;
+          this.currentQuestion = this.quiz.Questions[firstIndex - 1];
+
+
+          this.questionsService.getAnswers(this.currentQuestion?.Id).subscribe(ans => {
+            this.answers = ans;
+          })
+
+          // pager params
+          this.questionsCount = questions.length;
+          this.currentPage = firstIndex;
+
         });
       });
     })
@@ -67,6 +76,50 @@ export class QuizComponent implements OnInit {
     })
 
 
+  }
+
+  onChangeQuestion(page: number) {
+    this.currentQuestion = this.quiz.Questions[page - 1];
+    this.currentPage = page;
+    this.currentIndex = page;
+    this.questionsService.getAnswers(this.currentQuestion?.Id).subscribe(ans => {
+      this.answers = ans;
+    })
+
+  }
+
+  onNext() {
+    if (!this.currentPage)
+      return
+
+    if (this.currentPage == this.questionsCount)
+      return
+
+    this.currentPage++;
+    this.currentQuestion = this.quiz.Questions[this.currentPage - 1];
+
+    this.questionsService.getAnswers(this.currentQuestion?.Id).subscribe(ans => {
+      this.answers = ans;
+      debugger;
+    })
+
+  }
+  onPrve() {
+    if (!this.currentPage)
+      return
+
+    if (!this.questionsCount)
+      return
+
+    if (this.currentPage === 1)
+      return
+
+    this.currentPage--;
+    this.currentQuestion = this.quiz.Questions[this.currentPage- 1];
+
+    this.questionsService.getAnswers(this.currentQuestion?.Id).subscribe(ans => {
+      this.answers = ans;
+    })
   }
 }
 

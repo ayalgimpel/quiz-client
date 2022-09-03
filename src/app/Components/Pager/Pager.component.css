@@ -1,0 +1,32 @@
+.btn {
+    margin-left: 50px;
+}
+
+.active-page {
+    font-weight: 600;
+}
+
+.page-panel {
+    display: flex;
+    /* justify-content: space-around; */
+}
+
+.btn-arrow,
+.btn-page {
+    font-size: 20px;
+    display: flex;
+    padding: 0px 15px;
+}
+
+.pages {
+    display: flex;
+}
+
+.page-line {
+    display: flex;
+}
+
+.btn-arrow:hover,
+.btn-page:hover {
+    cursor: pointer;
+}

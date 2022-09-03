@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import Quiz from 'src/app/Data/Models/quiz.modeule';
+import Quiz from 'src/app/Data/Models/quiz.module';
 import QuizService from 'src/app/Services/quiz.service';
 
 @Component({

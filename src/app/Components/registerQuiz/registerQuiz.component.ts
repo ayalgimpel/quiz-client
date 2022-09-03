@@ -16,8 +16,8 @@ export class RegisterQuizComponent implements OnInit {
 
 
 
-  GoToPreviewQuiz(quizeCode: string) {
-    this.router.navigate(['PreviewQuiz'], { queryParams: { quizeCode: quizeCode } })
+  GoToRegisterQuizeCode() {
+    this.router.navigate(['RegisterQuizeCode'])
   }
 
 }

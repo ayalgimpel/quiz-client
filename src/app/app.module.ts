@@ -14,6 +14,8 @@ import { QuizComponent } from './Components/Quiz/Quiz.component';
 import { RegisterQuizComponent } from './Components/registerQuiz/registerQuiz.component';
 import { QuizQuestionComponent } from './Components/quizQuestion/quizQuestion.component';
 import { EditQuizComponent } from './Components/editQuiz/editQuiz.component';
+import { PagerComponent } from './Components/Pager/Pager.component';
+import { RegisterQuizeCodeComponent } from './Components/registerQuizeCode/registerQuizeCode.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { EditQuizComponent } from './Components/editQuiz/editQuiz.component';
     RegisterQuizComponent,
     QuizQuestionComponent,
     PreviewQuizComponent,
-    EditQuizComponent
+    EditQuizComponent,
+    PagerComponent,
+    RegisterQuizeCodeComponent
   ],
   imports: [
     BrowserModule,
