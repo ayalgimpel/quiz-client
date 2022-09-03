@@ -42,7 +42,7 @@ export class MenageQuizesComponent implements OnInit {
     this.router.navigate(['AdminOptions']);
   }
   CreateQuizPage(){
-    this.router.navigate(['NewQuiz']);
+    this.router.navigate(['EditQuiz']);
   }
   GoToEditQuizPage(quiz:Quiz){
     this.router.navigate(['EditQuiz'],{queryParams:{quizId:quiz.Id}});

@@ -23,9 +23,9 @@
         </select>
       </div>
       <div class="buttons">
-        <button class="btn btn-primary" (click)="GoToManageQuizesPage()">Manage Quizes</button>
-        <button class="btn btn-danger" (click)="GoToReportsPage()">Reports</button>
-        <button class="btn btn-info" (click)="GoToManageQuestionPage()">Manage Questions</button>
+        <button class="btn btn-primary" (click)="GoToManageQuizesPage()" [disabled]="this.selectedInstitute === '' || this.selectedSubject === ''">Manage Quizes</button>
+        <button class="btn btn-danger" (click)="GoToReportsPage()" [disabled]="this.selectedInstitute === '' || this.selectedSubject === ''">Reports</button>
+        <button class="btn btn-info" (click)="GoToManageQuestionPage()" [disabled]="this.selectedInstitute === '' || this.selectedSubject === ''">Manage Questions</button>
       </div>
     </div>
   </div>

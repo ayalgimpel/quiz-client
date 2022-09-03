@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import AppService from 'src/app/core/app.service';
 import Institue from 'src/app/Data/Models/institute.module';
 import QuizSubjects from 'src/app/Data/Models/quiz.subjects.module';
 import AdminService from 'src/app/Services/admin.service';
@@ -11,31 +12,40 @@ import AdminService from 'src/app/Services/admin.service';
 })
 
 export class AdminOptionComponent implements OnInit {
-institutesOptions:Institue[]=[];
-quizSubjects:QuizSubjects[]=[];
-selectedInstitute:string = "";
-selectedSubject:string = "";
-  constructor(private adminService:AdminService,private router:Router) { }
+  institutesOptions: Institue[] = [];
+  quizSubjects: QuizSubjects[] = [];
+  selectedInstitute: string = "";
+  selectedSubject: string = "";
+  constructor(private adminService: AdminService, private router: Router, private appService: AppService) { }
 
-   ngOnInit() {
-    this.adminService.GetAllInstitutes().subscribe(data =>{this.institutesOptions = data});
-    this.adminService.GetAllSubjects().subscribe(data=>{this.quizSubjects = data})
-    
+  ngOnInit() {
+    this.adminService.GetAllInstitutes().subscribe(data => { this.institutesOptions = data });
+    this.adminService.GetAllSubjects().subscribe(data => { this.quizSubjects = data })
+
   }
-  GoToManageQuizesPage(){
-    this.router.navigate(['ManageQuizes'], {queryParams: {instituteID:this.selectedInstitute, subjectID:this.selectedSubject }})
+  GoToManageQuizesPage() {
+
+    if (this.selectedInstitute === "" || this.selectedSubject === "")
+      return;
+    this.appService.setInstitute(this.selectedInstitute);
+    this.appService.setSubject(this.selectedSubject);
+    this.router.navigate(['ManageQuizes'], { queryParams: { instituteID: this.selectedInstitute, subjectID: this.selectedSubject } })
   }
-  GoToReportsPage(){
+  GoToReportsPage() {
+    if (this.selectedInstitute === "" || this.selectedSubject === "")
+      return;
     this.router.navigate(['Reports'])
   }
-  GoToManageQuestionPage(){
+  GoToManageQuestionPage() {
+    if (this.selectedInstitute === "" || this.selectedSubject === "")
+      return;
     this.router.navigate(['ManageQuestions'])
   }
-  OnSelectInstitute(event:any){
-    this.selectedInstitute = event.target.value;
-  }
-  OnSelectSubjects(event:any){
-    this.selectedSubject = event.target.value;
-  }
+  // OnSelectInstitute(event: any) {
+  //   this.selectedInstitute = event.target.value;
+  // }
+  // OnSelectSubjects(event: any) {
+  //   this.selectedSubject = event.target.value;
+  // }
 
 }

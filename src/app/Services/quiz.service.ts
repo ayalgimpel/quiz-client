@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import Quiz from "../Data/Models/quiz.module";
 
 
 @Injectable({
@@ -35,6 +36,9 @@ class QuizService {
     }
     removeQuestionFromQuiz(questionId:string,quizId:string): Observable<any>{
         return this.http.get(this.baseUrl + `/api/quizes/RemoveQuestionFromList?questionId=${questionId}&quizId=${quizId}`)
+    }
+    EditQuiz(quizId:string,payload:Quiz):Observable<any>{
+        return this.http.put(this.baseUrl + `/api/quizes/${quizId}`,payload)
     }
 
 
