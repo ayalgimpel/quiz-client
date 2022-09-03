@@ -11,6 +11,8 @@ import { QuizComponent } from './Components/Quiz/Quiz.component';
 import { RegisterQuizComponent } from './Components/registerQuiz/registerQuiz.component';
 import { QuizQuestionComponent } from './Components/quizQuestion/quizQuestion.component';
 import { EditQuizComponent } from './Components/editQuiz/editQuiz.component';
+import { PagerComponent } from './Components/Pager/Pager.component';
+import { RegisterQuizeCodeComponent } from './Components/registerQuizeCode/registerQuizeCode.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -33,6 +35,8 @@ import { AnswersTableComponent } from './Components/answersTable/answersTable.co
     QuizQuestionComponent,
     PreviewQuizComponent,
     EditQuizComponent,
+    PagerComponent,
+    RegisterQuizeCodeComponent,
     ManageQuestionsComponent,
     AnswersTableComponent
   ],

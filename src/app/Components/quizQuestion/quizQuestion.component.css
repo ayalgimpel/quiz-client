@@ -5,10 +5,10 @@
 }
 
 .question-content {
-    background-color: red;
+    outline-style: ridge;
     width: 100%;
     text-align: left;
-    padding: 20px;
+    padding: 15px 2rem;
 }
 
 .question-image {
@@ -16,7 +16,29 @@
     width: 50%;
 }
 
+.label {
+    /* margin-top: 40px; */
+    display: flex;
+}
+
 .question-answers {
-    background-color: green;
+    text-align: left;
+    font-size: larger;
     height: 70%;
+}
+
+.question-btn {
+    justify-content: space-between;
+    padding: 0px 2rem;
+    display: flex;
+}
+
+.text-answer {
+    font-size: 14px;
+    padding: 0px 10px;
+    padding-left: 0px;
+}
+
+ul {
+    padding-top: 1em;
 }

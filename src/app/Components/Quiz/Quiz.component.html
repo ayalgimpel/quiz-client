@@ -1,23 +1,21 @@
 <div class="quiz-header">
-    <h1>Quiz - {{quiz.Name}} </h1>
+    <div class="header-text">Quiz - {{quiz.Name}} </div>
 </div>
 
 <div class="container-body">
     <div class="content h-100">
 
-        <app-quizQuestion *ngIf="currentQuestion" [question]="currentQuestion"></app-quizQuestion>
-        
-                
+        <app-quizQuestion *ngIf="currentQuestion" [index]="currentPage" [question]="currentQuestion"
+            [answers]="answers">
+        </app-quizQuestion>
+
+
 
     </div>
 </div>
 
-<div class="bottom">
-    <button type="button" class="btn btn-secondary">
-        <--- Previous Question</button>
-
-            <button type="button" class="btn btn-primary" (click)="GoToFinishQuiz()">Finish Quize</button>
-
-            <button type="button" class="btn btn-secondary">Next Question ---></button>
-
+<div class="footer">
+    <app-Pager *ngIf="currentPage" [count]="questionsCount" [page]="currentPage" (changePage)="onChangeQuestion($event)"
+        (next)="onNext()" (prve)="onPrve()">
+    </app-Pager>
 </div>

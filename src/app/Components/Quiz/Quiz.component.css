@@ -1,8 +1,8 @@
 .quiz-header {
-    height: 100px;
+    height: 80px;
     color: rgb(246, 246, 246);
     background-color: rgb(16, 70, 198);
-    padding: 20px 50px;
+    padding: 15px 2rem;
 }
 
 
@@ -18,24 +18,20 @@
     height: 33%;
 }
 
-.bottom {
-    background-color: lightseagreen;
-    height: 100px;
+.footer {
+    background-color: aquamarine;
+    outline-style: dashed;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .answer {
     display: table-row-group;
 }
 
-.btn {
-    font-size: 20px;
-    text-align: center;
-    border-radius: 40px;
-    height: 50x;
-}
 
 .questionPart {
     display: flex;
@@ -43,5 +39,13 @@
 }
 
 .container-body {
-    height: calc(100% - 200px);
+    height: calc(100% - 160px);
+}
+
+.quiz-header h2 {
+    padding: 15px 2rem;
+}
+
+.header-text {
+    font-size: 24px;
 }
