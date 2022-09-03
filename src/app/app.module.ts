@@ -1,7 +1,4 @@
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
+
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
@@ -14,6 +11,15 @@ import { QuizComponent } from './Components/Quiz/Quiz.component';
 import { RegisterQuizComponent } from './Components/registerQuiz/registerQuiz.component';
 import { QuizQuestionComponent } from './Components/quizQuestion/quizQuestion.component';
 import { EditQuizComponent } from './Components/editQuiz/editQuiz.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ManageQuestionsComponent } from './Components/manageQuestions/manageQuestions.component';
+import { AnswersTableComponent } from './Components/answersTable/answersTable.component';
+
+
 
 @NgModule({
   declarations: [
@@ -26,14 +32,18 @@ import { EditQuizComponent } from './Components/editQuiz/editQuiz.component';
     RegisterQuizComponent,
     QuizQuestionComponent,
     PreviewQuizComponent,
-    EditQuizComponent
+    EditQuizComponent,
+    ManageQuestionsComponent,
+    AnswersTableComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

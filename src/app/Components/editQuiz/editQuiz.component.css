@@ -1,12 +1,37 @@
 h1 {
-
     position: relative;
     font-size: 4em;
     font-weight: 900;
     color: white;
     z-index: 1;
-    overflow: hidden;
     margin-bottom: 100px;
+}
+.headline-h1 h1{
+  margin: 100px;
+
+}
+.tablerow{
+height: 70px;
+}
+tr{
+  text-align: center;
+}
+input,textarea{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 30px #61d1e1, 0px 0px 30px #858585;
+}
+.inputName{
+  width: 50%;
+}
+.headline-h1{
+  text-align: center;
+}
+table{
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
 }
 .lable-after{
     position: relative;
@@ -14,7 +39,6 @@ h1 {
     font-weight: 900;
     color: #61d1e1;
     z-index: 1;
-    overflow: hidden;
     margin-bottom: 30px
 }
 .textarea-after{
@@ -23,7 +47,6 @@ h1 {
     font-weight: 900;
     color: rgba(0,0,0,0.7);
     z-index: 1;
-    overflow: hidden;
     margin-bottom: 20px
 }
 .go-collect{
@@ -75,19 +98,27 @@ textarea{
     font-weight: 900;
     color: #61d1e1;
     z-index: 1;
-    overflow: hidden;
     margin-bottom: 20px
 }
+
 .row h3,.row input, .row textarea{
     position: relative;
     font-size: 1.8em;
     font-weight: 900;
     color: rgba(0,0,0,0.7);
     z-index: 1;
-    overflow: hidden;
     margin-bottom: 20px
 }
-
+.questions h1{
+    font-size: 4em;
+    font-weight: 900;
+    color: white;
+}
+.question-h3{
+  font-size: 2em;
+    font-weight: 900;
+    color: white;
+}
 .picker-radio{
     margin-top: 5%;
     margin-bottom: 5%;
@@ -96,7 +127,8 @@ textarea{
     width: 70%;
     height:150px;
     border-width: 15px;
-    box-shadow: 0px 0px 30px #A3A0FB, 0px 0px 30px #858585;
+    box-shadow: 0px 0px 30px #61d1e1, 0px 0px 30px #858585;
+
 }
 
 .picker-radio h3{
@@ -106,12 +138,23 @@ textarea{
     font-weight: 900;
     color: rgba(0,0,0,0.7);
     z-index: 1;
-    overflow: hidden;
 }
 .radiotextsty {
-    color: #A5A4BF;
+    color: rgba(0,0,0,0.7);
     font-size: 18px;
   }
+  option{
+    color: black;
+    font-weight: bold;
+}
+.Options{
+  width: 300px;
+  height: 50px;
+  border-radius: 20px;
+  color:rgba(0,0,0,0.7);
+  font-size: 18px;
+  font-weight: bold;
+}
   
   .customradio {
     display: block;
@@ -176,3 +219,32 @@ textarea{
     border-radius: 50%;
     background: #61d1e1;
   }
+  .btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+
+.disabled{
+  color: red;
+}
+.buttons{
+  margin: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+button{
+  margin: 10px;
+  width: 120px;
+  height: 50px;
+  color: white;
+  font-size: 18px;
+  font-weight:500;
+} 

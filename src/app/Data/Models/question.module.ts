@@ -9,6 +9,8 @@ class Question{
     Content:string = "";
     SuplementaryContent :string = "";
     Answers:Answer[] = [];
+    Quiz_Id:string="";
+    Disabeld:boolean = false;
     
     constructor(public Name:string, QuizId?:Guid) {
       this.Id = Guid.create().toString();

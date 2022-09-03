@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   constructor(private router:Router) { }
-   iconImageSource:string = "../../pictures/Login2.jpeg"
+   iconImageSource:string = "assets/Login.png"
   ngOnInit() {
   }
   GoToAdminOptions(){

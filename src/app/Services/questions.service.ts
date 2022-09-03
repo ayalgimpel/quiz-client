@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import Quiz from "../Data/Models/quiz.modeule";
 
 
 @Injectable({
@@ -19,6 +20,9 @@ class QuestionsService {
     }
     getAnswers(questionId: string):Observable<any> {
         return this.http.get(this.baseUrl + `/api/questions/${questionId}/answers`);
+    }
+    getQuestionsFromQuizSubjects(quizSubject:string){
+
     }
     //DeleteQuizById(id:string):Observable<any>{
     //    return this.http.delete(this.baseUrl + `/api/questions/deleteQuiz?quizID=${id}`);

@@ -3,21 +3,25 @@
     margin-left: 50px;
     width: 300px;
     height: 50px;
-    
+}
+.main{
+    width: 100%;
+    height: 100%;
+    background-color: #000;
 }
 option{
     color: black;
     font-weight: bold;
 }
 .selectPicking{
-    margin-top: 30px;
+    margin-top: 70px;
 }
-.selectPicking label{
+/* .selectPicking label{
     margin: 30px;
     font-weight: bold;
     font-size: 17px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+} */
 .main{
     text-align: center;
     align-items: center;
@@ -29,13 +33,39 @@ option{
 .buttons{
     margin: 100px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+}
+.label{
+    position: relative;
+    font-size: 1.5em;
+    font-weight: 900;
+    color: white;
+    z-index: 1;
+    margin: 30px;
+
+    
+}
+button{
+    width: 170px;
+    height: 50px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+}
+h1 {
+    
+    position: relative;
+    font-size: 4em;
+    font-weight: 900;
+    color: white;
+    z-index: 1;
+    margin-bottom: 100px;
 }
 button{
     margin: 10px;
 }
 .card{
-    width: 690px;
+    width: 100%;
     height: 700px;
     background: #000;
     color: #fff;
