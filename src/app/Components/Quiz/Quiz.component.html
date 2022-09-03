@@ -6,7 +6,7 @@
     <div class="content h-100">
 
         <app-quizQuestion *ngIf="currentQuestion" [index]="currentPage" [question]="currentQuestion"
-            [answers]="answers">
+            [answers]="answers" (selectAnswer)="onSelectedAnswer($event)">
         </app-quizQuestion>
 
 

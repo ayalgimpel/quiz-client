@@ -12,7 +12,6 @@ export class PagerComponent implements OnInit {
   @Input() page: number | undefined;
 
   @Output() changePage = new EventEmitter<number>();
-
   @Output() next = new EventEmitter<number>();
   @Output() prve = new EventEmitter<number>();
 

@@ -14,7 +14,7 @@ import { EditQuizComponent } from './Components/editQuiz/editQuiz.component';
 import { PagerComponent } from './Components/Pager/Pager.component';
 import { RegisterQuizeCodeComponent } from './Components/registerQuizeCode/registerQuizeCode.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -44,10 +44,11 @@ import { AnswersTableComponent } from './Components/answersTable/answersTable.co
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

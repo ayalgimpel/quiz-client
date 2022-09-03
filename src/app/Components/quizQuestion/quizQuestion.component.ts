@@ -18,29 +18,36 @@ export class QuizQuestionComponent implements OnInit {
   @Input() index: number | undefined;
   @Input() question: Question | undefined;
   @Input() answers: Answer[] | undefined;
-  //@Input() answer: Answer | undefined;
-  quiz: Quiz = new Quiz("", "", "", "", 0)
-  student: Student = new Student();
-  // answer: Answer = new Answer();
-  selectedAnswer:number =0;
 
- // @Output() changeAnswer = new EventEmitter<number>();
+
+  @Output() selectAnswer = new EventEmitter<any>();
+
+  student: Student = new Student();
+  answer: Answer[] = [];
+  selectedAnswer: number = 0;
+
+  // @Output() changeAnswer = new EventEmitter<number>();
 
   constructor(
     private questionsService: QuestionsService,
     private answersService: AnswersService
   ) { }
-    
+
   ngOnInit() {
     if (!this.question?.Id)
       return;
 
-    
+
 
   }
 
-  SelectionAnswers( ){
-  // this.answersService.CreateStudentAnswer(this.quiz?.Id , this.student?.Id,this.answer?.Id).subscribe()
+  onSelectedAnswer(answerId: string) {
+
+    this.selectAnswer.emit({ answerId });
+    // debugger
+    // this.answersService.CreateStudentAnswer(this.quiz?.Id, this.student?.Id, answerId).subscribe(createdStudentAnswer => {
+    //  console.log(createdStudentAnswer);
+    //});
   }
 
 }
