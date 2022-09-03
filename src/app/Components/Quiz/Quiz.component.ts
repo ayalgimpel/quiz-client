@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import Answer from 'src/app/Data/Models/answer.module';
 import Question from 'src/app/Data/Models/question.module';
 import Quiz from 'src/app/Data/Models/quiz.module';
+import AnswersService from 'src/app/Services/answers.service';
 import QuestionsService from 'src/app/Services/questions.service';
 import QuizService from 'src/app/Services/quiz.service';
 import Swal from 'sweetalert2';
@@ -26,7 +27,8 @@ export class QuizComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private quizService: QuizService,
-    private questionsService: QuestionsService
+    private questionsService: QuestionsService,
+    private answersService: AnswersService
   ) {
 
   }
@@ -115,11 +117,21 @@ export class QuizComponent implements OnInit {
       return
 
     this.currentPage--;
-    this.currentQuestion = this.quiz.Questions[this.currentPage- 1];
+    this.currentQuestion = this.quiz.Questions[this.currentPage - 1];
 
     this.questionsService.getAnswers(this.currentQuestion?.Id).subscribe(ans => {
       this.answers = ans;
     })
+  }
+
+  onSelectedAnswer(data: any) {
+    const payload = {
+      answerId: data.answerId
+    }
+    //this.answersService.CreateStudentAnswer(this.quiz?.Id, this.student?.Id, answerId).subscribe(createdStudentAnswer => {
+    //  console.log(createdStudentAnswer);
+    //});
+
   }
 }
 
