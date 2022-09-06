@@ -17,12 +17,12 @@ class QuizService {
     getAllQuizes(): Observable<any> {
         return this.http.get(this.baseUrl + "/api/quizes");
     }
-    
+
     getQuizQuestions(quizId: string): Observable<any> {
         return this.http.get(this.baseUrl + `/api/quizes/${quizId}/questions`);
     }
 
-    DeleteQuizById(id: string): Observable<any> {   
+    DeleteQuizById(id: string): Observable<any> {
         return this.http.delete(this.baseUrl + `/api/quizes/deleteQuiz?quizID=${id}`);
     }
     getQuizById(id: string): Observable<any> {
@@ -31,19 +31,22 @@ class QuizService {
     getQuizByQuizeCode(quizCode: string): Observable<any> {
         return this.http.get(this.baseUrl + `/api/quizes/getByQuizeCode?quizeCode=${quizCode}`)
     }
-    AddQuestionToQuiz(questionId:string,quizId:string): Observable<any>{
+    AddQuestionToQuiz(questionId: string, quizId: string): Observable<any> {
         return this.http.get(this.baseUrl + `/api/quizes/AddQuestionToQuizList?questionId=${questionId}&quizId=${quizId}`)
     }
-    removeQuestionFromQuiz(questionId:string,quizId:string): Observable<any>{
+    removeQuestionFromQuiz(questionId: string, quizId: string): Observable<any> {
         return this.http.get(this.baseUrl + `/api/quizes/RemoveQuestionFromList?questionId=${questionId}&quizId=${quizId}`)
     }
-    EditQuiz(quizId:string,payload:Quiz):Observable<any>{
-        return this.http.put(this.baseUrl + `/api/quizes/${quizId}`,payload)
+    EditQuiz(quizId: string, payload: Quiz): Observable<any> {
+        return this.http.put(this.baseUrl + `/api/quizes/${quizId}`, payload)
     }
     AddNewQuiz(quiz:any):Observable<any>{
         return this.http.post(this.baseUrl + `/api/quizes`,quiz)
     }
 
+    getByQuery({ institute, quizSubject }: { institute: string, quizSubject: string }): Observable<any> {
+        return this.http.get(this.baseUrl + `/api/quizes?institute=${institute}&quizSubject=${quizSubject}`);
+    }
 
 
 

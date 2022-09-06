@@ -11,7 +11,7 @@
 </div>
 
 <div class="footer">
-    <app-Pager *ngIf="currentPage" [count]="questionsCount" [page]="currentPage" (changePage)="onChangeQuestion($event)"
-        (next)="onNext()" (prve)="onPrve()">
+    <app-Pager *ngIf="currentPage" [count]="questionsCount" [studentAnswersSelected]="studentAnswersSelected" [page]="currentPage" (changePage)="onChangeQuestion($event)"
+        (next)="onNext()" (prve)="onPrve()" (finishQuiz)="GoToFinishQuiz()">
     </app-Pager>
 </div>

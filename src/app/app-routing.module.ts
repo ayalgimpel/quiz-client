@@ -12,6 +12,9 @@ import { PreviewQuizComponent } from './Components/previewQuiz/previewQuiz.compo
 import { QuizComponent } from './Components/Quiz/Quiz.component';
 import { RegisterQuizComponent } from './Components/registerQuiz/registerQuiz.component';
 import { RegisterQuizeCodeComponent } from './Components/registerQuizeCode/registerQuizeCode.component';
+import { ReportQueryComponent } from './Components/report-query/report-query.component';
+import { ReportQuestionsQuizesComponent } from './Components/report-QuestionsQuizes/report-QuestionsQuizes.component';
+import { ReportQuizesComponent } from './Components/report-quizes/report-quizes.component';
 import { ReportsComponent } from './Components/reports/reports.component';
 import { ResultQuizComponent } from './Components/resultQuiz/resultQuiz.component';
 
@@ -24,16 +27,19 @@ const routes: Routes = [
   { path: 'AdminOptions', component: AdminOptionComponent },
   { path: 'ManageQuizes', component: MenageQuizesComponent },
   { path: 'ManageQuestions', component: ManageQuestionsComponent },
-  { path: 'Reports', component: ReportsComponent },
   { path: 'EditQuiz', component: EditQuizComponent },
   { path: 'NewQuiz', component: CreateQuizComponent },
   { path: 'PreviewQuiz', component: PreviewQuizComponent },
   { path: 'ResultQuiz', component: ResultQuizComponent },
   { path: 'RegisterQuiz', component: RegisterQuizComponent },
   { path: 'RegisterQuizeCode', component: RegisterQuizeCodeComponent },
+  { path: 'Reports', component: ReportsComponent },
+  { path: 'ReportsQuery', component: ReportQueryComponent },
+  { path: 'ReportsQuizes', component: ReportQuizesComponent },
+  { path: 'ReportQuestionsQuizes', component: ReportQuestionsQuizesComponent },
   { path: 'EditQuestion', component: EditQuestionComponent }
 
-  
+
 ];
 
 @NgModule({

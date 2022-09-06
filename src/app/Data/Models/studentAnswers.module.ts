@@ -1,8 +1,9 @@
-class StudentAnswers{
-
-    Quiz_Id:string=""
-    Student_Id:string=""
-    Answer_Id:string=""
-    crtatedDate:string=""
+class StudentAnswer {
+    Id: string = "";
+    Quiz_Id: string = "";
+    Student_Id: string = "";
+    Answer_Id: string = "";
+    Qustion_Id: string = "";
+    CreatedDate: string = "";
 }
-export default StudentAnswers;
+export default StudentAnswer;

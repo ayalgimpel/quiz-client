@@ -1,10 +1,11 @@
 import { ThisReceiver } from "@angular/compiler";
 import { Guid } from "guid-typescript";
 
-class Answer{
-    Id:string;
-    IsCorrect:Boolean = false;
-    constructor(public Content:string, public Qustion_Id:string) {
+class Answer {
+    Id: string;
+    IsCorrect: Boolean = false;
+    Checked: boolean = false;
+    constructor(public Content: string, public QuestionId: Guid) {
         this.Id = Guid.create().toString();
     }
 }

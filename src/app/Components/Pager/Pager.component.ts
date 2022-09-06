@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import StudentAnswer from 'src/app/Data/Models/studentAnswers.module';
 
 
 @Component({
@@ -10,10 +11,12 @@ export class PagerComponent implements OnInit {
 
   @Input() count: number | undefined;
   @Input() page: number | undefined;
+  @Input() studentAnswersSelected: StudentAnswer[] = [];
 
   @Output() changePage = new EventEmitter<number>();
   @Output() next = new EventEmitter<number>();
   @Output() prve = new EventEmitter<number>();
+  @Output() finishQuiz = new EventEmitter<number>();
 
 
   range: number[] = []
@@ -41,8 +44,8 @@ export class PagerComponent implements OnInit {
   onPrve() {
     this.prve.emit()
   }
-  
-  ShowFinishbutton(){
-    
+
+  ShowFinishbutton() {
+    this.finishQuiz.emit();
   }
 }

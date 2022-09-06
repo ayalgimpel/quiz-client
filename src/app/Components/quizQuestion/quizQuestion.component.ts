@@ -6,6 +6,7 @@ import Quiz from 'src/app/Data/Models/quiz.module';
 import Student from 'src/app/Data/Models/student.module';
 import AnswersService from 'src/app/Services/answers.service';
 import QuestionsService from 'src/app/Services/questions.service';
+import StudentAnswerService from 'src/app/Services/studentAnswer.service';
 
 
 @Component({
@@ -18,11 +19,13 @@ export class QuizQuestionComponent implements OnInit {
   @Input() index: number | undefined;
   @Input() question: Question | undefined;
   @Input() answers: Answer[] | undefined;
+  //@Input() student: Student | undefined;
 
 
   @Output() selectAnswer = new EventEmitter<any>();
+  quiz: Quiz = new Quiz("", "", "", "", 0);
 
-  student: Student = new Student();
+  student: Student | undefined;
   answer: Answer[] = [];
   selectedAnswer: number = 0;
 
@@ -30,7 +33,8 @@ export class QuizQuestionComponent implements OnInit {
 
   constructor(
     private questionsService: QuestionsService,
-    private answersService: AnswersService
+    private answersService: AnswersService,
+    private StudentAnswer: StudentAnswerService
   ) { }
 
   ngOnInit() {
@@ -42,12 +46,7 @@ export class QuizQuestionComponent implements OnInit {
   }
 
   onSelectedAnswer(answerId: string) {
-
     this.selectAnswer.emit({ answerId });
-    // debugger
-    // this.answersService.CreateStudentAnswer(this.quiz?.Id, this.student?.Id, answerId).subscribe(createdStudentAnswer => {
-    //  console.log(createdStudentAnswer);
-    //});
   }
 
 }

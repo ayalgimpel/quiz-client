@@ -34,7 +34,7 @@ export class AdminOptionComponent implements OnInit {
   GoToReportsPage() {
     if (this.selectedInstitute === "" || this.selectedSubject === "")
       return;
-    this.router.navigate(['Reports'])
+    this.router.navigate(['ReportsQuery'])
   }
   GoToManageQuestionPage() {
     this.router.navigate(['ManageQuestions'])
