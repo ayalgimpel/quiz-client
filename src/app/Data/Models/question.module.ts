@@ -7,12 +7,13 @@ class Question{
     SingleChoice:Boolean = true;
     MultipleChoice:Boolean = false;
     Content:string = "";
-    SuplementaryContent :string = "";
+    SuplementeryContent :string = "";
     Answers:Answer[] = [];
-    Quiz_Id:string="";
+    Quizes_Id:string[]=[];
     Disabeld:boolean = false;
+    Last_Updated:string = "";
     
-    constructor(public Name:string, QuizId?:Guid) {
+    constructor(public Name:string) {
       this.Id = Guid.create().toString();
     }
 

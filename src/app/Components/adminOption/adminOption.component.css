@@ -61,6 +61,15 @@ h1 {
     z-index: 1;
     margin-bottom: 100px;
 }
+h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    font-size: 2em;
+    font-weight: 900;
+    color: #61d1e1;
+    z-index: 1;
+    margin-bottom: 10px;
+}
 button{
     margin: 10px;
 }

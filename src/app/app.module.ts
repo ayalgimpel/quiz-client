@@ -1,4 +1,4 @@
-
+import {MatPaginatorModule} from '@angular/material/paginator'
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
@@ -20,6 +20,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ManageQuestionsComponent } from './Components/manageQuestions/manageQuestions.component';
 import { AnswersTableComponent } from './Components/answersTable/answersTable.component';
+import { EditQuestionComponent } from './Components/editQuestion/editQuestion.component';
 
 
 
@@ -38,7 +39,8 @@ import { AnswersTableComponent } from './Components/answersTable/answersTable.co
     PagerComponent,
     RegisterQuizeCodeComponent,
     ManageQuestionsComponent,
-    AnswersTableComponent
+    AnswersTableComponent,
+    EditQuestionComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,7 @@ import { AnswersTableComponent } from './Components/answersTable/answersTable.co
     CommonModule,
     HttpClientModule,
     BrowserAnimationsModule,
-
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

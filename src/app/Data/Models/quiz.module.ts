@@ -6,7 +6,7 @@ import Student from "./student.module";
 
 class Quiz {
     Id: string="";
-    Quiz_Code: Guid;
+    Quiz_Code: string="";
     Questions: Qustion[] = [];
     Aproached_Students_Id:number[] = [];
     Last_Updated:string = "";
@@ -22,7 +22,8 @@ class Quiz {
      public Quiz_Subject:string,
      public Passing_Grade:number)
      {
-        this.Quiz_Code = Guid.create();
+        this.Quiz_Code = Guid.create().toString();
+        this.Id = Guid.create().toString();
     }
 
 }

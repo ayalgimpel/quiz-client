@@ -5,7 +5,7 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <div class="mane">
-        <h1>Edit/Create Quiz : </h1>
+    <h1>Edit/Create Quiz : </h1>
     <form>
         <div>
             <hr />
@@ -42,7 +42,8 @@
                     <label>Quiz Name</label>
                 </dt>
                 <dd class="col-sm-10">
-                    <input class="inputName" type="text" [value]="quizToEdit.Name" name="name" [(ngModel)]="quizToEdit.Name" />
+                    <input class="inputName" type="text" [value]="quizToEdit.Name" name="name"
+                        [(ngModel)]="quizToEdit.Name" />
                 </dd>
             </dl>
             <dl class="row">
@@ -123,13 +124,14 @@
                             </thead>
                             <tr class="tablerow" *ngFor="let question of optionalQuestionList">
                                 <td>{{question.Id}}</td>
-                                <td>{{question.Content}}</td>   
-                                <button (click)="AddQuestionToQuiz(question,quizToEdit)" [disabled]="question.Disabeld" type="button" class="btn btn-info btn-circle btn-lg"><i class="glyphicon glyphicon-ok"></i></button>
+                                <td>{{question.Content}}</td>
+                                <button (click)="AddQuestionToQuiz(question,quizToEdit)" [disabled]="question.Disabeld"
+                                    type="button" class="btn btn-info btn-circle btn-lg"><i
+                                        class="glyphicon glyphicon-ok"></i></button>
                             </tr>
                         </table>
                     </div>
                 </div>
-
                 <h3 class="question-h3">The Question That Will Appered In the Quiz : </h3>
                 <div class="container">
                     <div class="row col-md-24 col-md-offset-0 custyle">
@@ -140,20 +142,37 @@
                                     <td>Question Content</td>
                                 </tr>
                             </thead>
-                            <tr class="tablerow" *ngFor="let item of quizToEdit.Questions">
-                                <td>{{item.Id}}</td>
-                                <td>{{item.Content}}</td>
-                                <button (click)="RemoveQuestionFromQuiz(item,quizToEdit)" type="button" class="btn btn-warning btn-circle btn-lg"><i class="glyphicon glyphicon-remove"></i></button>
-                            </tr>
+                            <ng-container *ngIf="quizId">
+                                <tr class="tablerow" *ngFor="let item of quizToEdit.Questions">
+                                    <td>{{item.Id}}</td>
+                                    <td>{{item.Content}}</td>
+                                    <button (click)="RemoveQuestionFromQuiz(item,quizToEdit)" type="button"
+                                        class="btn btn-warning btn-circle btn-lg"><i
+                                            class="glyphicon glyphicon-remove"></i></button>
+                                </tr>
+                            </ng-container>
+                            <ng-container *ngIf="!quizId">
+                                <tr class="tablerow" *ngFor="let item of questionOfTheQuizToCreate">
+                                    <td>{{item.Id}}</td>
+                                    <td>{{item.Content}}</td>
+                                    <button (click)="RemoveQuestionFromQuiz(item,quizToEdit)" type="button"
+                                        class="btn btn-warning btn-circle btn-lg"><i
+                                            class="glyphicon glyphicon-remove"></i></button>
+                                </tr>
+                            </ng-container>
                         </table>
                     </div>
                 </div>
+
             </div>
+        
+
         </div>
-    </form>
-    <div class="buttons">
-        <button class="btn btn-warning">Back</button>
-        <button class="btn btn-danger">Show Demo</button>
-        <button class="btn btn-lg btn-info" (click)="Edit()">Save</button>
-      </div>
+
+</form>
+<div class="buttons">
+    <button class="btn btn-warning" (click)="Back()">Back</button>
+    <button class="btn btn-danger">Show Demo</button>
+    <button class="btn btn-lg btn-info" (click)="Save()">Save</button>
+</div>
 </div>

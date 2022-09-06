@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminOptionComponent } from './Components/adminOption/adminOption.component';
 import { CreateQuizComponent } from './Components/createQuiz/createQuiz.component';
+import { EditQuestionComponent } from './Components/editQuestion/editQuestion.component';
 import { EditQuizComponent } from './Components/editQuiz/editQuiz.component';
 import { HomeComponent } from './Components/home/home.component';
 import { LoginComponent } from './Components/login/login.component';
@@ -29,7 +30,9 @@ const routes: Routes = [
   { path: 'PreviewQuiz', component: PreviewQuizComponent },
   { path: 'ResultQuiz', component: ResultQuizComponent },
   { path: 'RegisterQuiz', component: RegisterQuizComponent },
-  { path: 'RegisterQuizeCode', component: RegisterQuizeCodeComponent }
+  { path: 'RegisterQuizeCode', component: RegisterQuizeCodeComponent },
+  { path: 'EditQuestion', component: EditQuestionComponent }
+
   
 ];
 

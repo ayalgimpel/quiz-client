@@ -1,19 +1,24 @@
 .page {
     height: 100%;
+    background-color: black;
 }
-
+.page-header h1{
+    margin: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 3em;
+    font-weight: 900;
+    color: white;
+}
 .page-header {
-    height: 80px;
-    line-height: 80px;
-    color: rgb(246, 246, 246);
-    background-color: rgb(16, 70, 198);
+    height: 120px;
+    color: white;
+    background-color: #61d1e1;
     display: flex;
-    justify-content: center;
-    margin: auto;
+    justify-content: space-evenly;
 }
 
 .page-content {
-    height: calc(100% - 80px);
+    height: calc(100% - 150px);
     display: flex;
     justify-content: space-around;
 }

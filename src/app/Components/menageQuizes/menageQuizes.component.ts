@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import Quiz from 'src/app/Data/Models/quiz.module';
 import QuizService from 'src/app/Services/quiz.service';
 import Swal from 'sweetalert2';
-
+import {MatPaginatorModule} from '@angular/material/paginator'
 @Component({
   selector: 'app-menageQuizes',
   templateUrl: './menageQuizes.component.html',
