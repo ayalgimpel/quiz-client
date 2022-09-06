@@ -1,11 +1,12 @@
 <div class="pager-btn w-100">
   <div class="page-panel w-100">
 
+    <div>you answered all {{studentAnswersSelected.length}} questions , {{count}} answers were correct.</div>
 
+    <div class="btn-arrow noselect" (click)="onPrve()">Previous Question</div>
 
-    <div class="btn-arrow noselect"  (click)="onPrve()">Previous Question</div>
-
-    <!--<button type="button" class="btn btn-primary" >Finish Quize</button> -->
+    <button type="button" *ngIf="page === count" (click)="ShowFinishbutton()" class="btn btn-primary">Finish
+      Quize</button>
 
 
     <div class="pages" *ngFor="let item of range" (click)="onChangePage(item)">
@@ -15,7 +16,7 @@
       <div class="page-line">|</div>
     </div>
 
-    <div class="btn-arrow noselect" (click)="onNext()">Next Question</div>
+    <div class="btn-arrow noselect" ngif (click)="onNext()">Next Question</div>
 
 
   </div>

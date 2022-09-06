@@ -11,8 +11,8 @@ class AnswersService {
     }
     baseUrl: string = "http://localhost:4000";
 
-    CreateStudentAnswer(Quiz_Id: string, Student_Id: string, Answer_Id: string): Observable<any> {
-        return this.http.post(this.baseUrl + `/api/studentAnswers`, { Quiz_Id, Student_Id, Answer_Id })
+    CreateStudentAnswer(StudentQuizes_Id: string, Qustion_Id: string, Answer_Id: string): Observable<any> {
+        return this.http.post(this.baseUrl + `/api/studentAnswers`, { StudentQuizes_Id, Qustion_Id, Answer_Id })
     }
 }
 

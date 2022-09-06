@@ -31,14 +31,17 @@ export class RegisterQuizeCodeComponent implements OnInit {
     const currentStudent = this.appService.getCurrentStudent();
     this.quizService.getQuizByQuizeCode(quizeCode).subscribe(quiz => {
 
-      debugger
       const studentQuiz: StudentQuiz = {
         Quiz_Id: quiz.Id,
         Student_Id: currentStudent?.id || ''
       }
 
-      this.studentQuiz.create(studentQuiz).subscribe(creatredStudentQuiz => {
+      this.studentQuiz.create(studentQuiz).subscribe((creatredStudentQuiz: any) => {
         console.log(creatredStudentQuiz);
+        if (!creatredStudentQuiz.createdStudentQuiz || !creatredStudentQuiz.createdStudentQuiz.Id)
+          return
+
+        this.appService.setCurrentStudentQuizId(creatredStudentQuiz?.createdStudentQuiz.Id)
         this.router.navigate(['PreviewQuiz'], { queryParams: { quizeCode: quizeCode } })
       });
 

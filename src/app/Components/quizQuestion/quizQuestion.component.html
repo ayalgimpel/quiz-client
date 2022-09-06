@@ -13,9 +13,9 @@
 
   <div class="w-100 question-answers">
     <ul *ngFor="let item of answers; let i = index ">
-      <label class="label">
-        <div class="text-answer"> {{i +1}} )  {{item.Content}}</div>
-        <input [(ngModel)]='selectedAnswer' [value]="item.Id" (ngModelChange)="onSelectedAnswer(item.Id)" type="radio" >
+      <label class="label" (click)="onSelectedAnswer(item.Id)">
+        <div class="text-answer"> {{i +1}} ) {{item.Content}}</div>
+        <input [value]="item.Id" [checked]="item.Checked" type="radio">
         <span class="checkmark"></span>
       </label>
     </ul>

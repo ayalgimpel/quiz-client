@@ -20,6 +20,10 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ManageQuestionsComponent } from './Components/manageQuestions/manageQuestions.component';
 import { AnswersTableComponent } from './Components/answersTable/answersTable.component';
+import { ResultQuizComponent } from './Components/resultQuiz/resultQuiz.component';
+import { ReportQueryComponent } from './Components/report-query/report-query.component';
+import { ReportQuizesComponent } from './Components/report-quizes/report-quizes.component';
+
 
 
 
@@ -38,7 +42,12 @@ import { AnswersTableComponent } from './Components/answersTable/answersTable.co
     PagerComponent,
     RegisterQuizeCodeComponent,
     ManageQuestionsComponent,
-    AnswersTableComponent
+    AnswersTableComponent,
+    ResultQuizComponent,
+    ReportQueryComponent,
+    ReportQuizesComponent
+    
+    
   ],
   imports: [
     BrowserModule,

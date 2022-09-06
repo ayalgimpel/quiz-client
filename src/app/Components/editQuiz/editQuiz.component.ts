@@ -32,7 +32,6 @@ export class EditQuizComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       const quizId = params["quizId"];
       if (!quizId) {
-        debugger
         this.quizToEdit.Institue_Name = this.appService.getInstitute();
         this.quizToEdit.Quiz_Subject = this.appService.getSubject();
         this.GetAllQuestionForEdditing();
@@ -50,7 +49,6 @@ export class EditQuizComponent implements OnInit {
 
   InitQuestions() {
     this.quizService.getQuizQuestions(this.quizToEdit.Id).subscribe((questions) => {
-      debugger
       this.quizToEdit.Questions = questions
     })
   }
