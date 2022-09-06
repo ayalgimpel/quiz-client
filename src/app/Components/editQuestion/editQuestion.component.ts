@@ -71,7 +71,7 @@ export class EditQuestionComponent implements OnInit {
     }
   }
   AddAnswer() {
-    const answer = new Answer("", this.questionToEdit.Id)
+    const answer = new Answer("");
     answer.IsCorrect = false;
     this.answerService.AddNewAnswer(answer).subscribe(res => {
       this.questionToEdit.Answers.push(answer)

@@ -5,7 +5,8 @@ class Answer {
     Id: string;
     IsCorrect: Boolean = false;
     Checked: boolean = false;
-    constructor(public Content: string, public QuestionId: Guid) {
+    Qustion_Id: string ="";
+    constructor(public Content: string) {
         this.Id = Guid.create().toString();
     }
 }
