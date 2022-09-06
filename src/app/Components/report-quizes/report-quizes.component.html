@@ -1,35 +1,72 @@
 <div class="report-quiz h-100 w-100">
-  
-  <h2>Quiz Report : " Topic "</h2>
+
+  <h2>Quiz Report : {{quiz.Name}} | {{quiz.Institue_Name}} | {{quiz.Quiz_Subject}} </h2>
 
   <div class="header">Summary</div>
 
   <div class="Summary-box">
-    <div class="box-right" >
+    <div class="box-right">
 
-    <div class="label"> Quiz Name :</div>
-    <div class="label">Quiz Code :</div>
-    <div class="label">Quiz Id :</div>
-    <div class="label">Quiz Type :</div>
-    <div class="label">Number Of Questions :</div>
-    <div class="label">Passing Grade</div>
-  </div>
+      <div>
+        <label> Quiz Name :</label>
+        {{quiz.Name}}
+      </div>
 
-    <div class="box-left" >
+      <div>
+        <label> Quiz Code :</label>
+        {{quiz.Quiz_Code}}
+      </div>
 
-    <div class="label">Date Range :</div>
-    <div class="label">Number Of Submissions :</div>
-    <div class="label">Number Of Respondents :</div>
-    <div class="label">Passing Percentage :</div>
-    <div class="label">Average Grade :</div>
-    <div class="label">Median Garde :</div>
-  </div>
+      <div>
+        <label> Quiz Id :</label>
+        {{quiz.Id}}
+      </div>
+
+      <div>
+        <label> Number Of Questions :</label>
+        {{quiz.Questions.length}}
+      </div>
+
+      <div>
+        <label> Passing Grade :</label>
+        {{quiz.Passing_Grade}}
+      </div>
+
+    </div>
+
+    <div class="box-left">
+
+      <div>
+        <label> Date Range :</label>
+        {{from}} - {{to}}
+      </div>
+      <div>
+        <label> Number Of Submissions :</label>
+        {{reports.length}}
+      </div>
+
+      <div>
+        <label> Number Of Respondents passed :</label>
+        {{numberOfRespondentsPassed}}
+      </div>
+
+      <div>
+        <label>Passing Percentage :</label>
+        {{( numberOfRespondentsPassed /reports.length) * 100 }}%
+      </div>
+
+      <div>
+        <label>Paverage Grade :</label>
+        {{avgGrade}}
+      </div>
+
+    </div>
   </div>
 
   <div class="header2"> Respondent Grades And Answers</div>
   <div>Click a name from list to see the respondents test <button class="btn btn-primary">
-    Show Qustions
-  </button></div>
+      Show Qustions
+    </button></div>
   <div class="">
     <table class="table table-striped">
       <thead>
@@ -42,26 +79,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr *ngFor="let item of reports">
           <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-          <td>@mdo</td>
+          <td>{{item.student.First_Name + item.student.Last_Name}}</td>
+          <td>{{item.submittedDate}}</td>
+          <td>{{item.totalQuestions}}</td>
+          <td>{{item.grade}}</td>
+
+
         </tr>
       </tbody>
     </table>

@@ -20,12 +20,10 @@
     /* margin-top: 40px; */
     display: flex;
 }
-
-.question-answers {
-    text-align: left;
-    font-size: larger;
-    height: 70%;
+.main{
+    margin-bottom: 50px;
 }
+
 
 .question-btn {
     justify-content: space-between;

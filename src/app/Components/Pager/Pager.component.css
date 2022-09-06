@@ -5,6 +5,23 @@
 .active-page {
     font-weight: 600;
 }
+.question-details{
+    display: flex;
+    justify-content: space-evenly;
+}
+.main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align:center ;
+}
+.main button{
+    border-radius: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
 
 .page-panel {
     display: flex;
