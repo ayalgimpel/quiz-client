@@ -40,12 +40,15 @@ class QuizService {
     EditQuiz(quizId: string, payload: Quiz): Observable<any> {
         return this.http.put(this.baseUrl + `/api/quizes/${quizId}`, payload)
     }
-    AddNewQuiz(quiz:any):Observable<any>{
-        return this.http.post(this.baseUrl + `/api/quizes`,quiz)
+    AddNewQuiz(quiz: any): Observable<any> {
+        return this.http.post(this.baseUrl + `/api/quizes`, quiz)
     }
 
     getByQuery({ institute, quizSubject }: { institute: string, quizSubject: string }): Observable<any> {
         return this.http.get(this.baseUrl + `/api/quizes?institute=${institute}&quizSubject=${quizSubject}`);
+    }
+    ChangeQuizActivity(quizId: string) {
+        return this.http.post(this.baseUrl + `/api/quizes/ChangeActivity`, { quizId })
     }
 
 

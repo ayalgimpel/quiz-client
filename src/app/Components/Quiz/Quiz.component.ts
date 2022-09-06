@@ -49,6 +49,9 @@ export class QuizComponent implements OnInit {
       const quizCode = params["quizeCode"]
       await this.initilazeQuizData(quizCode);
       await this.initilazeSelectedAnswers();
+      
+
+
     })
   }
 
@@ -59,8 +62,12 @@ export class QuizComponent implements OnInit {
       console.log('missing quiz');
       return;
     }
+    
+    this.quizIsActive(this.quiz.Id);
+
 
     this.quiz.Questions = await this.getQuizQuestions(this.quiz.Id);
+    this.quiz.IsActive = true;////
 
     const firstIndex = 1;
     this.currentIndex = firstIndex;
@@ -88,6 +95,11 @@ export class QuizComponent implements OnInit {
       });
   }
 
+
+   quizIsActive(quizId:string){
+    this.quizService.ChangeQuizActivity(quizId).subscribe(item=>
+      console.log(item))
+   }
 
   GoToFinishQuiz() {
 
