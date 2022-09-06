@@ -55,27 +55,26 @@ export class EditQuestionComponent implements OnInit {
     })
   }
   MarkAsCorrectAnswer(item: Answer) {
-    // if(this.questionToEdit.MultipleChoice){
-    //   this.answerService.ChangeAnswersState(this.questionToEdit.Id).subscribe()
-    //   //לעשות פונקציה שהופכות את ה מצב של כל התשובות לאותה שאלה ל false
-
-    // }
-    if (this.questionToEdit.SingleChoice) {
-      debugger;
-      this.answerService.ChangeAnswersState(this.questionToEdit.Id).subscribe(item =>
+      this.answerService.ChangeAnswersState({questionId:this.questionToEdit.Id,answerId:item.Id}).subscribe(item =>
         console.log(this.questionToEdit)
       )
-      this.answerService.SetCorrectAnswer(item.Id).subscribe(item =>
-        console.log(item)
-      )
-    }
   }
   AddAnswer() {
     const answer = new Answer("");
     answer.IsCorrect = false;
     this.answerService.AddNewAnswer(answer).subscribe(res => {
-      this.questionToEdit.Answers.push(answer)
+      
     })
+  }
+  Back(){
+
+  }
+  Save(){
+
+  }
+  Delete(answerId:string){
+    debugger;
+    this.answerService.DeleteAnswer(answerId);
   }
 
 }

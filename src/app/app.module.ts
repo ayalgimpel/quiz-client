@@ -23,7 +23,6 @@ import { AnswersTableComponent } from './Components/answersTable/answersTable.co
 import { ResultQuizComponent } from './Components/resultQuiz/resultQuiz.component';
 import { ReportQueryComponent } from './Components/report-query/report-query.component';
 import { ReportQuizesComponent } from './Components/report-quizes/report-quizes.component';
-
 import { EditQuestionComponent } from './Components/editQuestion/editQuestion.component';
 
 
@@ -46,9 +45,7 @@ import { EditQuestionComponent } from './Components/editQuestion/editQuestion.co
     AnswersTableComponent,
     ResultQuizComponent,
     ReportQueryComponent,
-    ReportQuizesComponent
-    
-    ,
+    ReportQuizesComponent,
     EditQuestionComponent
   ],
   imports: [

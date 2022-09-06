@@ -25,12 +25,13 @@ class AnswersService {
     MarkAsCorrectAnswer(answer:Answer):Observable<any>{
         return this.http.post(this.baseUrl + `/api/answers/CahngeToCorrect`, answer)
     }
-    ChangeAnswersState(questionId:string):Observable<any>{
-        return this.http.post(this.baseUrl + `/api/answers/ChangeAnswersState`,questionId)
+    ChangeAnswersState({questionId,answerId}:{questionId:string,answerId:string}):Observable<any>{
+        return this.http.post(this.baseUrl + `/api/answers/ChangeAnswersState`,{questionId,answerId})
     }
-    SetCorrectAnswer(answerId:String){
-        return this.http.post(this.baseUrl + `/api/answers/SetCorrectAnswer`,answerId)
+    DeleteAnswer(answerId:string){
+        return this.http.delete(this.baseUrl + `/api/answers/DeleteAnswer/?answerId=${answerId}`)
     }
+   
 }
 
 export default AnswersService;

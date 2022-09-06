@@ -23,6 +23,9 @@
   </div>
   <div class="Content">
     <h3>Question Answers : </h3>
+    <div class="btnAddAnswer">
+      <button id="addNew" class="btn btn-warning" (click)="AddAnswer()">Add New Answer</button>
+    </div>
     <div class="container">
       <div class="row col-md-24 col-md-offset-0 custyle">
         <table class="table">
@@ -60,45 +63,20 @@
                   </svg>
                   Set as correct
                 </button>
-                <button id="deleteAnswer" type="button" class="btn btn-warning btn-circle btn-lg"><i
+                <button (click)="Delete(item.Id)" id="deleteAnswer" type="button" class="btn btn-warning btn-circle btn-lg"><i
                     class="glyphicon glyphicon-remove"></i></button>
               </td>
             </tr>
           </tbody>
         </table>
-        <div class="btnAddAnswer">
-          <button id="addNew" class="btn btn-warning" (click)="AddAnswer()">Add New Answer</button>
-        </div>
+        
       </div>
-      <!-- <div class="row">
-        <div class="table-responsive col-md-16">
-          <table  class="table table-bordered">
-            <thead>
-                <th>Id</th>
-                <th>Content</th>
-                <th>Action</th>
-            </thead>
-            <tbody>
-              <div class="tableBody" *ngFor="let item of questionToEdit.Answers">
-                  <td *ngIf="item.IsCorrect"><i class="bi bi-patch-check-fill"></i></td>
-                  <td><input type="text" [value]="item.Id" class="form-control"></td>
-                  <td><input type="text" [value]="item.Content" class="form-control"></td>
-                  <td><button class="btn btn-primary glyphicon glyphicon-remove"></button></td>
-              </div>
-            </tbody>
-          </table>
-        </div> -->
-      <!-- </div> -->
     </div>
+    <div class="buttons">
+      <button class="btn btn-warning" (click)="Back()">Back</button>
+      <button class="btn btn-danger">Show Demo</button>
+      <button class="btn btn-lg btn-info" (click)="Save()">Save</button>
+  </div>
 
-    <!-- <div *ngIf="!quizId">
-                <tr class="tablerow" *ngFor="let item of questionOfTheQuizToCreate">
-                    <td>{{item.Id}}</td>
-                    <td>{{item.Content}}</td>
-                    <button (click)="RemoveQuestionFromQuiz(item,quizToEdit)" type="button"
-                        class="btn btn-warning btn-circle btn-lg"><i
-                            class="glyphicon glyphicon-remove"></i></button>
-                </tr>
-            </div> -->
   </div>
 </div>
